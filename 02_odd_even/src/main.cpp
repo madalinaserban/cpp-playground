@@ -18,6 +18,7 @@ void printOddOrEven(int number)
 int main(int argc, char *argv[])
 {
 	int number = -13;
+	bool ok = true;
 
 	// What is this program expected to do?
 	// - Shows whether an argument is an ODD or EVEN number.
@@ -34,24 +35,27 @@ int main(int argc, char *argv[])
 	if (argc <= 1)
 	{
 		printf("No program arguments found.\n");
+		ok = false;
 	}
 	
 	// TODO(Gusti): i don't know why this doesn't work, but someone please FIX it.
 	// --------------- start
 
 	// Get the first argument
-	std::string argumentAsString = argv[1];
+	std::string argumentAsString = argv[0];
 	const char* argumentAsCharArray = argumentAsString.c_str();
-
+	number = std::stoi(argumentAsCharArray);
 	//number = argv[1]; // No
 	//should use atoi?
 	// or std::stoi?
 
-	std::cout << argumentAsString << std::endl; // i think this should be removed
+
 
 	// --------------- stop
-
-	printOddOrEven(number);
+	if (ok == true)
+	{
+		printOddOrEven(number);
+	}
 
 	return 0;
 }
