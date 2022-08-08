@@ -20,7 +20,7 @@ public:
 		column_count = numColumnsX;
 		line_count = numLinesY;
 		// TODO: add functionality
-		char a;
+		char a = '-';
 		while (numColumnsX)
 		{
 			line.push_back(a);
